@@ -1,0 +1,23 @@
+<% if @article.errors.any? %>
+  <h4 class="alert alert-danger">
+    <% @article.errors.full_messages.each do |error| %>
+      <p>
+        - <%= error %>
+      </p>
+    <% end %>
+  </h4>
+<% end %>
+
+<%= form_for @article do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', class: 'btn btn-success' %>
+  </p>
+<% end %>
