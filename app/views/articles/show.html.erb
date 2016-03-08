@@ -1,5 +1,7 @@
 <h1 class="text-center">Title: <%= @article.title %></h1>
 
+<%= render 'layouts/breadcrumbs', active_page: @article.title %>
+
 <div class="well">
   <p class="lead">Description:</p>
   <hr />
