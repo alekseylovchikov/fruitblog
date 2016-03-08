@@ -1,10 +1,14 @@
 <h1 class="text-center">All articles</h1>
 
-<ul class="list-group">
+<table class="table table-striped">
+	<tr>
+		<th>Title</th>
+		<th>Actions</th>
+	</tr>
 	<% @articles.each do |article| %>
-		<li class="list-group-item">
-			<%= link_to article.title, article_path(article) %>
-			<span class="pull-right"><%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are You Sure?' } %></span>
-		</li>
+		<tr>
+			<td><%= link_to article.title, article_path(article) %></td>
+			<td><%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are You Sure?' } %></td>
+		</tr>
 	<% end %>
-</ul>
+</table>
