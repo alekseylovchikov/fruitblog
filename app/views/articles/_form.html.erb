@@ -1,5 +1,8 @@
 <% if @article.errors.any? %>
   <h4 class="alert alert-danger">
+    <p>
+      <strong>You have a <%= pluralize(@article.errors.count, "error") %></strong>
+    </p>
     <% @article.errors.full_messages.each do |error| %>
       <p>
         - <%= error %>
@@ -8,14 +11,14 @@
   </h4>
 <% end %>
 
-<%= form_for @article do |f| %>
+<%= form_for(@article, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'form-control', placeholder: 'Title of article' %>
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.text_area :description, rows: 10, class: 'form-control', placeholder: 'Description of article' %>
   </p>
   <p>
     <%= f.submit 'Submit', class: 'btn btn-success' %>
