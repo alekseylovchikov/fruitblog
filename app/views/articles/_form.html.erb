@@ -1,15 +1,4 @@
-<% if @article.errors.any? %>
-  <h4 class="alert alert-danger">
-    <p>
-      <strong>You have a <%= pluralize(@article.errors.count, "error") %></strong>
-    </p>
-    <% @article.errors.full_messages.each do |error| %>
-      <p>
-        - <%= error %>
-      </p>
-    <% end %>
-  </h4>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <%= form_for(@article, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
   <p>

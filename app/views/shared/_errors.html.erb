@@ -1,0 +1,12 @@
+<% if obj.errors.any? %>
+  <h4 class="alert alert-danger">
+    <p>
+      <strong>You have a <%= pluralize(obj.errors.count, "error") %></strong>
+    </p>
+    <% obj.errors.full_messages.each do |error| %>
+      <p>
+        - <%= error %>
+      </p>
+    <% end %>
+  </h4>
+<% end %>

@@ -1,15 +1,10 @@
-<h1 class="text-center">Show Article</h1>
+<h1 class="text-center">Title: <%= @article.title %></h1>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= @article.title %></h3>
-  </div>
-  <div class="panel-body">
-    <%= @article.description %>
-  </div>
+<div class="well">
+  <p class="lead">Description:</p>
+  <hr />
+  <%= simple_format(@article.description) %>
+  <hr />
+  <%= link_to 'Edit', edit_article_path, class: 'btn btn-xs btn-primary' %>
+  <%= link_to 'Delete', article_path, method: :delete, data: {confirm: 'Are You Sure?'}, class: 'btn btn-xs btn-danger' %>
 </div>
-
-<hr />
-
-<%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %> 
-<%= link_to 'Delete', article_path, method: :delete, data: {confirm: 'Are You Sure?'}, class: 'btn btn-danger' %> 
