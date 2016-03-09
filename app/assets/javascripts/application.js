@@ -15,3 +15,14 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $('.flash-message').animate({
+      opacity: 0
+    }, 1000, function() {
+      console.log('done animate...');
+      $(this).remove();
+    });
+  }, 4000);
+});
