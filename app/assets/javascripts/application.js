@@ -17,12 +17,18 @@
 //= require_tree .
 
 $(document).ready(function() {
-  setTimeout(function() {
-    $('.flash-message').animate({
-      opacity: 0
-    }, 1000, function() {
-      console.log('done animate...');
-      $(this).remove();
-    });
-  }, 4000);
+
+  var message = $('.flash-message');
+
+  // if message is here do this
+  if (message) {
+    // fade message
+    setTimeout(function() {
+      message.animate({
+        opacity: 0
+      }, 4000, function() {
+        $(this).remove();
+      });
+    }, 500);
+  }
 });
