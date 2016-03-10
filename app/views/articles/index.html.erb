@@ -12,7 +12,7 @@
 				<h4><%= link_to article.title, article_path(article) %></h4>
 				<hr />
 				<p>
-					<%= truncate(article.description, length: 50) %>
+					<%= simple_format(truncate(article.description, length: 50)) %>
 				</p>
 				<hr />
 				<p>
